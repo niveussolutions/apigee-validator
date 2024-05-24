@@ -370,10 +370,15 @@ Send a request to the proxy endpoint with the following JSON body to test the va
   }
 }
 ```
+## Contributors
+
+- [Karthik V Rao](https://www.linkedin.com/in/karthik-v-rao-404760229)
+- [Pavan Kumar Jogi](https://www.linkedin.com/in/pawan-kumar-j-3b5426242)
+
 
 ## Download
 
-[Download the ZIP file](./apigee-validation.zip)
+[Download the Proxy ZIP file](./apigee-validation.zip)
 
 
 
