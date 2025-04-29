@@ -68,6 +68,12 @@ validator.validateRequestBody = function (requestBody, schema) {
     return value.length <= maxLength;
   }
 
+  function validateLength(value, length) {
+    // console.log("Validating length:", value.length, length);
+    
+    return value.length === length;
+  }
+
   function validateValidValues(value, validValues) {
     return validValues.includes(value);
   }
@@ -121,6 +127,9 @@ validator.validateRequestBody = function (requestBody, schema) {
           if (rule.minLength !== undefined && !validateMinLength(value, rule.minLength)) {
             errors.push('Field ' + key + ' should have at least ' + rule.minLength + ' characters.');
           }
+          if (rule.length !== undefined && !validateLength(value, rule.length)) { 
+            errors.push('Field ' + key + ' should be only ' + rule.length + ' characters.');
+          }
           if (rule.maxLength !== undefined && !validateMaxLength(value, rule.maxLength)) {
             errors.push('Field ' + key + ' should have at most ' + rule.maxLength + ' characters.');
           }
@@ -170,8 +179,8 @@ validator.validateRequestBody = function (requestBody, schema) {
     validRequestBody: validRequestBody
   };
 };
-```
 
+```
 ## Usage in Apigee X
 
 ### JavaScript-1.js

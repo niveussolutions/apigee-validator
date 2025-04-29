@@ -5,13 +5,13 @@ const schema = {
   _anyOf: ['phone_number', 'policy_number'],
   phone_number: { type: 'string', phone: true },
   policy_number: { type: 'string', minLength: 5 },
-  name: { type: 'string', required: true },
+  name: { type: 'string', required: true},
 };
 
 const testCases = [
   {
     description: 'Valid: name and phone_number provided',
-    input: { name: 'John', phone_number: '1234567890' },
+    input: { name: 'John bjkbj hjkbjkb', phone_number: '1234567890' },
   },
   {
     description: 'Valid: name and policy_number provided',
