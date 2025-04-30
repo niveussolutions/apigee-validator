@@ -133,7 +133,7 @@ validator.validateRequestBody = function (requestBody, schema) {
             var nestedErrors = [];
             var validNestedObject = validateObject(value, rule.properties, nestedErrors);
             if (nestedErrors.length > 0) {
-              errors.push(...nestedErrors);
+              errors.push.apply(errors, nestedErrors);
             } else {
               validObject[key] = validNestedObject;
             }
