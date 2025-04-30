@@ -93,7 +93,8 @@ validator.validateRequestBody = function (requestBody, schema) {
       }
     }
 
-    for (var key of schemaKeys) {
+    for (var i = 0; i < schemaKeys.length; i++) {
+      var key = schemaKeys[i];
       if (key === "_anyOf") continue;
       var rule = schema[key];
       var value = object[key];
